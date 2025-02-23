@@ -1,0 +1,183 @@
+Agent pid 2409650
+{'actor': {'fsdp_config': {'fsdp_size': -1,
+                           'grad_offload': False,
+                           'optimizer_offload': False,
+                           'param_offload': False,
+                           'wrap_policy': {'min_num_params': 0}},
+           'optim': {'lr': 1e-06,
+                     'lr_warmup_steps_ratio': 0.0,
+                     'min_lr_ratio': None,
+                     'total_training_steps': -1,
+                     'warmup_style': 'constant'},
+           'strategy': 'fsdp',
+           'ulysses_sequence_parallel_size': 1},
+ 'data': {'batch_size': 128,
+          'n_samples': 1,
+          'output_path': 'outputs_gen/test_gen.parquet',
+          'path': '/home/jiaruil5/social_reasoning_rl/data/tomi/test.parquet',
+          'prompt_key': 'prompt'},
+ 'model': {'external_lib': None,
+           'path': '/compute/babel-2-29/jiaruil5/social_reasoning/tinyzero/tomi_distilled_1.5b/actor/global_step_270',
+           'trust_remote_code': True},
+ 'rollout': {'do_sample': True,
+             'dtype': 'bfloat16',
+             'enforce_eager': True,
+             'free_cache_engine': True,
+             'gpu_memory_utilization': 0.4,
+             'ignore_eos': False,
+             'load_format': 'dummy_dtensor',
+             'log_prob_micro_batch_size': 8,
+             'max_num_batched_tokens': 8192,
+             'max_num_seqs': 1024,
+             'micro_batch_size': 256,
+             'n': 1,
+             'n_val': 1,
+             'name': 'vllm',
+             'prompt_length': 512,
+             'response_length': 1024,
+             'temperature': 0.6,
+             'tensor_model_parallel_size': 1,
+             'top_k': 50,
+             'top_p': 0.7},
+ 'trainer': {'n_gpus_per_node': 1, 'nnodes': 1}}
+[36m(ActorRolloutRefWorker pid=2424864)[0m Model config after override: Qwen2Config {
+[36m(ActorRolloutRefWorker pid=2424864)[0m   "_name_or_path": "/compute/babel-2-29/jiaruil5/social_reasoning/tinyzero/tomi_distilled_1.5b/actor/global_step_270",
+[36m(ActorRolloutRefWorker pid=2424864)[0m   "architectures": [
+[36m(ActorRolloutRefWorker pid=2424864)[0m     "Qwen2ForCausalLM"
+[36m(ActorRolloutRefWorker pid=2424864)[0m   ],
+[36m(ActorRolloutRefWorker pid=2424864)[0m   "attention_dropout": 0.0,
+[36m(ActorRolloutRefWorker pid=2424864)[0m   "bos_token_id": 151646,
+[36m(ActorRolloutRefWorker pid=2424864)[0m   "eos_token_id": 151643,
+[36m(ActorRolloutRefWorker pid=2424864)[0m   "hidden_act": "silu",
+[36m(ActorRolloutRefWorker pid=2424864)[0m   "hidden_size": 1536,
+[36m(ActorRolloutRefWorker pid=2424864)[0m   "initializer_range": 0.02,
+[36m(ActorRolloutRefWorker pid=2424864)[0m   "intermediate_size": 8960,
+[36m(ActorRolloutRefWorker pid=2424864)[0m   "max_position_embeddings": 131072,
+[36m(ActorRolloutRefWorker pid=2424864)[0m   "max_window_layers": 21,
+[36m(ActorRolloutRefWorker pid=2424864)[0m   "model_type": "qwen2",
+[36m(ActorRolloutRefWorker pid=2424864)[0m   "num_attention_heads": 12,
+[36m(ActorRolloutRefWorker pid=2424864)[0m   "num_hidden_layers": 28,
+[36m(ActorRolloutRefWorker pid=2424864)[0m   "num_key_value_heads": 2,
+[36m(ActorRolloutRefWorker pid=2424864)[0m   "pad_token_id": 151643,
+[36m(ActorRolloutRefWorker pid=2424864)[0m   "rms_norm_eps": 1e-06,
+[36m(ActorRolloutRefWorker pid=2424864)[0m   "rope_scaling": null,
+[36m(ActorRolloutRefWorker pid=2424864)[0m   "rope_theta": 10000,
+[36m(ActorRolloutRefWorker pid=2424864)[0m   "sliding_window": null,
+[36m(ActorRolloutRefWorker pid=2424864)[0m   "tie_word_embeddings": false,
+[36m(ActorRolloutRefWorker pid=2424864)[0m   "torch_dtype": "float32",
+[36m(ActorRolloutRefWorker pid=2424864)[0m   "transformers_version": "4.47.1",
+[36m(ActorRolloutRefWorker pid=2424864)[0m   "use_cache": true,
+[36m(ActorRolloutRefWorker pid=2424864)[0m   "use_mrope": false,
+[36m(ActorRolloutRefWorker pid=2424864)[0m   "use_sliding_window": false,
+[36m(ActorRolloutRefWorker pid=2424864)[0m   "vocab_size": 151936
+[36m(ActorRolloutRefWorker pid=2424864)[0m }
+[36m(ActorRolloutRefWorker pid=2424864)[0m 
+[36m(ActorRolloutRefWorker pid=2424864)[0m NCCL version 2.20.5+cuda12.4
+[36m(ActorRolloutRefWorker pid=2424864)[0m Qwen2ForCausalLM contains 1.78B parameters
+[36m(ActorRolloutRefWorker pid=2424864)[0m wrap_policy: functools.partial(<function transformer_auto_wrap_policy at 0x7eee54a72820>, transformer_layer_cls={<class 'transformers.models.qwen2.modeling_qwen2.Qwen2DecoderLayer'>})
+[36m(ActorRolloutRefWorker pid=2424864)[0m Before building vllm rollout, memory allocated (GB): 3.3303394317626953, memory reserved (GB): 5.177734375
+[36m(ActorRolloutRefWorker pid=2424864)[0m INFO 02-22 15:26:46 config.py:1670] Downcasting torch.float32 to torch.bfloat16.
+[36m(ActorRolloutRefWorker pid=2424864)[0m WARNING 02-22 15:26:51 config.py:380] To see benefits of async output processing, enable CUDA graph. Since, enforce-eager is enabled, async output processor cannot be used
+[36m(ActorRolloutRefWorker pid=2424864)[0m local rank 0
+[36m(ActorRolloutRefWorker pid=2424864)[0m INFO 02-22 15:26:51 selector.py:115] Using XFormers backend.
+[36m(ActorRolloutRefWorker pid=2424864)[0m no hf weight loader need to be updated
+[36m(ActorRolloutRefWorker pid=2424864)[0m INFO 02-22 15:26:52 selector.py:115] Using XFormers backend.
+[36m(ActorRolloutRefWorker pid=2424864)[0m before init cache memory allocated: 7.17715968GB, reserved: 7.331643392GB
+[36m(ActorRolloutRefWorker pid=2424864)[0m after init cache memory allocated: 37.300651008GB, reserved: 37.45513472GB
+[1/47] Start to process.
+[36m(ActorRolloutRefWorker pid=2424864)[0m kwargs: {'n': 1, 'logprobs': 1, 'max_tokens': 1024, 'detokenize': False, 'temperature': 0.6, 'top_k': 50, 'top_p': 0.7, 'ignore_eos': False}
+[36m(ActorRolloutRefWorker pid=2424864)[0m After building vllm rollout, memory allocated (GB): 31.42421531677246, memory reserved (GB): 34.8828125
+[36m(ActorRolloutRefWorker pid=2424864)[0m After building sharding manager, memory allocated (GB): 31.42421531677246, memory reserved (GB): 34.8828125
+[1/47] Start to generate.
+[2/47] Start to process.
+[2/47] Start to generate.
+[3/47] Start to process.
+[3/47] Start to generate.
+[4/47] Start to process.
+[4/47] Start to generate.
+[5/47] Start to process.
+[5/47] Start to generate.
+[6/47] Start to process.
+[6/47] Start to generate.
+[7/47] Start to process.
+[7/47] Start to generate.
+[8/47] Start to process.
+[8/47] Start to generate.
+[9/47] Start to process.
+[9/47] Start to generate.
+[10/47] Start to process.
+[10/47] Start to generate.
+[11/47] Start to process.
+[11/47] Start to generate.
+[12/47] Start to process.
+[12/47] Start to generate.
+[13/47] Start to process.
+[13/47] Start to generate.
+[14/47] Start to process.
+[14/47] Start to generate.
+[15/47] Start to process.
+[15/47] Start to generate.
+[16/47] Start to process.
+[16/47] Start to generate.
+[17/47] Start to process.
+[17/47] Start to generate.
+[18/47] Start to process.
+[18/47] Start to generate.
+[19/47] Start to process.
+[19/47] Start to generate.
+[20/47] Start to process.
+[20/47] Start to generate.
+[21/47] Start to process.
+[21/47] Start to generate.
+[22/47] Start to process.
+[22/47] Start to generate.
+[23/47] Start to process.
+[23/47] Start to generate.
+[24/47] Start to process.
+[24/47] Start to generate.
+[25/47] Start to process.
+[25/47] Start to generate.
+[26/47] Start to process.
+[26/47] Start to generate.
+[27/47] Start to process.
+[27/47] Start to generate.
+[28/47] Start to process.
+[28/47] Start to generate.
+[29/47] Start to process.
+[29/47] Start to generate.
+[30/47] Start to process.
+[30/47] Start to generate.
+[31/47] Start to process.
+[31/47] Start to generate.
+[32/47] Start to process.
+[32/47] Start to generate.
+[33/47] Start to process.
+[33/47] Start to generate.
+[34/47] Start to process.
+[34/47] Start to generate.
+[35/47] Start to process.
+[35/47] Start to generate.
+[36/47] Start to process.
+[36/47] Start to generate.
+[37/47] Start to process.
+[37/47] Start to generate.
+[38/47] Start to process.
+[38/47] Start to generate.
+[39/47] Start to process.
+[39/47] Start to generate.
+[40/47] Start to process.
+[40/47] Start to generate.
+[41/47] Start to process.
+[41/47] Start to generate.
+[42/47] Start to process.
+[42/47] Start to generate.
+[43/47] Start to process.
+[43/47] Start to generate.
+[44/47] Start to process.
+[44/47] Start to generate.
+[45/47] Start to process.
+[45/47] Start to generate.
+[46/47] Start to process.
+[46/47] Start to generate.
+[47/47] Start to process.
+[47/47] Start to generate.

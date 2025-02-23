@@ -1,0 +1,62 @@
+Agent pid 828040
+2025-02-22 14:03:05,662	INFO worker.py:1841 -- Started a local Ray instance.
+[36m(main_task pid=835688)[0m /data/user_data/jiaruil5/miniconda3/envs/tinyzero/lib/python3.9/site-packages/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+[36m(main_task pid=835688)[0m No module named 'vllm._version'
+[36m(main_task pid=835688)[0m   from vllm.version import __version__ as VLLM_VERSION
+[36m(pid=836054)[0m /data/user_data/jiaruil5/miniconda3/envs/tinyzero/lib/python3.9/site-packages/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+[36m(pid=836054)[0m No module named 'vllm._version'
+[36m(pid=836054)[0m   from vllm.version import __version__ as VLLM_VERSION
+[36m(pid=836280)[0m /data/user_data/jiaruil5/miniconda3/envs/tinyzero/lib/python3.9/site-packages/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+[36m(pid=836280)[0m No module named 'vllm._version'
+[36m(pid=836280)[0m   from vllm.version import __version__ as VLLM_VERSION
+[36m(WorkerDict pid=836054)[0m [W222 14:03:31.186249480 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+[36m(WorkerDict pid=836054)[0m Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in Qwen2ForTokenClassification is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+[36m(WorkerDict pid=836054)[0m You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
+[36m(WorkerDict pid=836054)[0m Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+[36m(WorkerDict pid=836054)[0m Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  4.30it/s]
+[36m(WorkerDict pid=836054)[0m Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  5.46it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  5.24it/s]
+[36m(WorkerDict pid=836054)[0m Some weights of Qwen2ForTokenClassification were not initialized from the model checkpoint at /compute/babel-4-33/jiaruil5/.cache/DeepSeek-R1-Distill-Qwen-1.5B and are newly initialized: ['score.bias', 'score.weight']
+[36m(WorkerDict pid=836054)[0m You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[36m(WorkerDict pid=836280)[0m Some weights of Qwen2ForTokenClassification were not initialized from the model checkpoint at /compute/babel-4-33/jiaruil5/.cache/DeepSeek-R1-Distill-Qwen-1.5B and are newly initialized: ['score.bias']
+[36m(WorkerDict pid=836280)[0m [W222 14:03:31.178574609 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+[36m(WorkerDict pid=836280)[0m Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in Qwen2ForTokenClassification is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+[36m(WorkerDict pid=836280)[0m You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
+[36m(WorkerDict pid=836054)[0m Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s][32m [repeated 2x across cluster] (Ray deduplicates logs by default. Set RAY_DEDUP_LOGS=0 to disable log deduplication, or see https://docs.ray.io/en/master/ray-observability/user-guides/configure-logging.html#log-deduplication for more options.)[0m
+[36m(WorkerDict pid=836280)[0m Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  3.79it/s]
+[36m(WorkerDict pid=836280)[0m Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  4.64it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  4.48it/s]
+[36m(WorkerDict pid=836280)[0m You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[36m(WorkerDict pid=836280)[0m Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  4.38it/s]
+[36m(WorkerDict pid=836280)[0m Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  4.99it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  4.89it/s]
+[36m(WorkerDict pid=836054)[0m Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in Qwen2ForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+[36m(WorkerDict pid=836054)[0m Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s][32m [repeated 2x across cluster][0m
+[36m(WorkerDict pid=836054)[0m Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  2.75it/s][32m [repeated 2x across cluster][0m
+[36m(WorkerDict pid=836054)[0m Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.31s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.29s/it]
+[36m(WorkerDict pid=836054)[0m Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  3.95it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  3.71it/s]
+[36m(WorkerDict pid=836054)[0m /data/user_data/jiaruil5/miniconda3/envs/tinyzero/lib/python3.9/site-packages/xformers/ops/fmha/flash.py:211: FutureWarning: `torch.library.impl_abstract` was renamed to `torch.library.register_fake`. Please use that instead; we will remove `torch.library.impl_abstract` in a future version of PyTorch.
+[36m(WorkerDict pid=836054)[0m   @torch.library.impl_abstract("xformers_flash::flash_fwd")
+[36m(WorkerDict pid=836280)[0m Flash Attention 2.0 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in Qwen2ForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `torch_dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", torch_dtype=torch.float16)`
+[36m(WorkerDict pid=836280)[0m Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+[36m(WorkerDict pid=836280)[0m Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  2.55it/s]
+[36m(WorkerDict pid=836280)[0m Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  3.62it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  3.40it/s]
+[36m(WorkerDict pid=836054)[0m   @torch.library.impl_abstract("xformers_flash::flash_bwd")
+[36m(WorkerDict pid=836054)[0m /data/user_data/jiaruil5/miniconda3/envs/tinyzero/lib/python3.9/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py:689: FutureWarning: FSDP.state_dict_type() and FSDP.set_state_dict_type() are being deprecated. Please use APIs, get_state_dict() and set_state_dict(), which can support different parallelisms, FSDP1, FSDP2, DDP. API doc: https://pytorch.org/docs/stable/distributed.checkpoint.html#torch.distributed.checkpoint.state_dict.get_state_dict .Tutorial: https://pytorch.org/tutorials/recipes/distributed_checkpoint_recipe.html .
+[36m(WorkerDict pid=836054)[0m   warnings.warn(
+[36m(WorkerDict pid=836280)[0m /data/user_data/jiaruil5/miniconda3/envs/tinyzero/lib/python3.9/site-packages/xformers/ops/fmha/flash.py:344: FutureWarning: `torch.library.impl_abstract` was renamed to `torch.library.register_fake`. Please use that instead; we will remove `torch.library.impl_abstract` in a future version of PyTorch.[32m [repeated 3x across cluster][0m
+[36m(WorkerDict pid=836280)[0m   @torch.library.impl_abstract("xformers_flash::flash_fwd")
+[36m(WorkerDict pid=836280)[0m   @torch.library.impl_abstract("xformers_flash::flash_bwd")
+[36m(main_task pid=835688)[0m wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+[36m(main_task pid=835688)[0m wandb: Currently logged in as: jiaruiliu999 to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+[36m(main_task pid=835688)[0m wandb: Tracking run with wandb version 0.19.7
+[36m(main_task pid=835688)[0m wandb: Run data is saved locally in /home/jiaruil5/social_reasoning_rl/TinyZero/scripts/tomi/wandb/run-20250222_140410-5lbfyt9r
+[36m(main_task pid=835688)[0m wandb: Run `wandb offline` to turn off syncing.
+[36m(main_task pid=835688)[0m wandb: Syncing run tomi-tinyzero
+[36m(main_task pid=835688)[0m wandb: ⭐️ View project at https://wandb.ai/jiaruiliu999/TinyZero
+[36m(main_task pid=835688)[0m wandb: 🚀 View run at https://wandb.ai/jiaruiliu999/TinyZero/runs/5lbfyt9r
+[36m(WorkerDict pid=836054)[0m /data/user_data/jiaruil5/miniconda3/envs/tinyzero/lib/python3.9/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py:689: FutureWarning: FSDP.state_dict_type() and FSDP.set_state_dict_type() are being deprecated. Please use APIs, get_state_dict() and set_state_dict(), which can support different parallelisms, FSDP1, FSDP2, DDP. API doc: https://pytorch.org/docs/stable/distributed.checkpoint.html#torch.distributed.checkpoint.state_dict.get_state_dict .Tutorial: https://pytorch.org/tutorials/recipes/distributed_checkpoint_recipe.html .[32m [repeated 2x across cluster][0m
+[36m(WorkerDict pid=836054)[0m   warnings.warn([32m [repeated 2x across cluster][0m
+*** SIGTERM received at time=1740252416 on cpu 1 ***
+PC: @     0x7f500708679a  (unknown)  __futex_abstimed_wait_common
+    @     0x7f500703e6f0  (unknown)  (unknown)
+[2025-02-22 14:26:56,891 E 828045 828045] logging.cc:460: *** SIGTERM received at time=1740252416 on cpu 1 ***
+[2025-02-22 14:26:56,891 E 828045 828045] logging.cc:460: PC: @     0x7f500708679a  (unknown)  __futex_abstimed_wait_common
+[2025-02-22 14:26:56,891 E 828045 828045] logging.cc:460:     @     0x7f500703e6f0  (unknown)  (unknown)

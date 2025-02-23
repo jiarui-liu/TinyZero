@@ -1,0 +1,25 @@
+Identity added: /home/jiaruil5/.ssh/id_rsa (jiaruil5@andrew.cmu.edu)
+/data/user_data/jiaruil5/miniconda3/envs/tinyzero/lib/python3.9/site-packages/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+No module named 'vllm._version'
+  from vllm.version import __version__ as VLLM_VERSION
+2025-02-22 15:26:12,245	INFO worker.py:1841 -- Started a local Ray instance.
+[36m(pid=2424864)[0m /data/user_data/jiaruil5/miniconda3/envs/tinyzero/lib/python3.9/site-packages/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+[36m(pid=2424864)[0m No module named 'vllm._version'
+[36m(pid=2424864)[0m   from vllm.version import __version__ as VLLM_VERSION
+[36m(ActorRolloutRefWorker pid=2424864)[0m [W222 15:26:37.063767136 Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+[36m(ActorRolloutRefWorker pid=2424864)[0m You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
+[36m(ActorRolloutRefWorker pid=2424864)[0m Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+[36m(ActorRolloutRefWorker pid=2424864)[0m Loading checkpoint shards:  50%|█████     | 1/2 [00:04<00:04,  4.52s/it]
+[36m(ActorRolloutRefWorker pid=2424864)[0m Loading checkpoint shards: 100%|██████████| 2/2 [00:06<00:00,  2.99s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:06<00:00,  3.22s/it]
+[36m(ActorRolloutRefWorker pid=2424864)[0m /data/user_data/jiaruil5/miniconda3/envs/tinyzero/lib/python3.9/site-packages/torch/distributed/fsdp/_init_utils.py:440: UserWarning: FSDP is switching to use `NO_SHARD` instead of ShardingStrategy.FULL_SHARD since the world size is 1.
+[36m(ActorRolloutRefWorker pid=2424864)[0m   warnings.warn(
+[36m(ActorRolloutRefWorker pid=2424864)[0m /data/user_data/jiaruil5/miniconda3/envs/tinyzero/lib/python3.9/site-packages/xformers/ops/fmha/flash.py:211: FutureWarning: `torch.library.impl_abstract` was renamed to `torch.library.register_fake`. Please use that instead; we will remove `torch.library.impl_abstract` in a future version of PyTorch.
+[36m(ActorRolloutRefWorker pid=2424864)[0m   @torch.library.impl_abstract("xformers_flash::flash_fwd")
+[36m(ActorRolloutRefWorker pid=2424864)[0m /data/user_data/jiaruil5/miniconda3/envs/tinyzero/lib/python3.9/site-packages/xformers/ops/fmha/flash.py:344: FutureWarning: `torch.library.impl_abstract` was renamed to `torch.library.register_fake`. Please use that instead; we will remove `torch.library.impl_abstract` in a future version of PyTorch.
+[36m(ActorRolloutRefWorker pid=2424864)[0m   @torch.library.impl_abstract("xformers_flash::flash_bwd")
+[36m(ActorRolloutRefWorker pid=2424864)[0m /data/user_data/jiaruil5/miniconda3/envs/tinyzero/lib/python3.9/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py:689: FutureWarning: FSDP.state_dict_type() and FSDP.set_state_dict_type() are being deprecated. Please use APIs, get_state_dict() and set_state_dict(), which can support different parallelisms, FSDP1, FSDP2, DDP. API doc: https://pytorch.org/docs/stable/distributed.checkpoint.html#torch.distributed.checkpoint.state_dict.get_state_dict .Tutorial: https://pytorch.org/tutorials/recipes/distributed_checkpoint_recipe.html .
+[36m(ActorRolloutRefWorker pid=2424864)[0m   warnings.warn(
+[36m(ActorRolloutRefWorker pid=2424864)[0m /data/user_data/jiaruil5/miniconda3/envs/tinyzero/lib/python3.9/site-packages/torch/distributed/fsdp/_state_dict_utils.py:773: UserWarning: When using ``NO_SHARD`` for ``ShardingStrategy``, full_state_dict willbe returned.
+[36m(ActorRolloutRefWorker pid=2424864)[0m   warnings.warn(
+[36m(ActorRolloutRefWorker pid=2424864)[0m /data/user_data/jiaruil5/miniconda3/envs/tinyzero/lib/python3.9/site-packages/torch/distributed/fsdp/_state_dict_utils.py:716: UserWarning: When using ``NO_SHARD`` for ``ShardingStrategy``, full_state_dict willbe returned.
+[36m(ActorRolloutRefWorker pid=2424864)[0m   warnings.warn(
