@@ -268,17 +268,16 @@ def split_dataset(train_dataset, test_ratio=0.1, random_state=42):
 
 def make_prefix(example, template_type):
     """Create prompt prefix based on template type."""
-    question = example["question"]
-    story = example["context"]
+    story_n_question = example["input_text"]
 
     if template_type == "base":
         prefix = f"""A conversation between User and Assistant. The user asks a question, and the Assistant solves it. The assistant first thinks about the reasoning process in the mind and then provides the user with the answer.
-User: Here is the story: {story} And here is the question: {question}
+User: {story_n_question}
 Please show your reasoning in <think> </think> tags and provide shortest possible final answer in <answer> </answer> tags.
 Assistant: Let me solve this step by step.
 <think>"""
     elif template_type == "qwen-instruct":
-        prefix = f"""<|im_start|>system\nYou are a helpful assistant. You first thinks about the reasoning process in the mind and then provides the user with the answer.<|im_end|>\n<|im_start|>user\nStory: {story}\nQuestion: {question}\nPlease show your reasoning in <think> </think> tags and provide shortest possible final answer in <answer> </answer> tags.<|im_end|>\n<|im_start|>assistant\nLet me solve this step by step.\n<think>"""
+        prefix = f"""<|im_start|>system\nYou are a helpful assistant. You first thinks about the reasoning process in the mind and then provides the user with the answer.<|im_end|>\n<|im_start|>user\nStory: {story_n_question}\nPlease show your reasoning in <think> </think> tags and provide shortest possible final answer in <answer> </answer> tags.<|im_end|>\n<|im_start|>assistant\nLet me solve this step by step.\n<think>"""
     return prefix
 
 

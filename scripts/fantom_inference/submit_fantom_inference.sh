@@ -4,9 +4,9 @@
 #SBATCH --output=log.out
 #SBATCH --error=log.err
 #SBATCH --nodes=1
-#SBATCH --ntasks=1
+#SBATCH --ntasks=1  
 #SBATCH --cpus-per-task=8
-#SBATCH --gres=gpu:A100_80GB:2
+#SBATCH --gres=gpu:A100_80GB:1
 #SBATCH --time=2-00:00:00
 #SBATCH --mem=64G
 #SBATCH --mail-user=jiaruiliu999@gmail.com   # Your email address
@@ -14,26 +14,21 @@
 #SBATCH --mail-type=END                      # Send email when the job ends
 #SBATCH --mail-type=FAIL                     # Send email if the job fails
 
-
 source ~/.bashrc
 conda activate tinyzero
 
-export CUDA_VISIBLE_DEVICES=0,1
-export N_GPUS=2
-export BASE_MODEL=/compute/babel-4-33/jiaruil5/.cache/DeepSeek-R1-Distill-Qwen-1.5B
-export DATA_DIR=/home/jiaruil5/social_reasoning_rl/data/fantom
-export EXPERIMENT_NAME=fantom-tinyzero
-export ROLLOUT_TP_SIZE=2
+export CUDA_VISIBLE_DEVICES=0
+export N_GPUS=1
+export ACTOR_MODEL=/compute/babel-2-29/jiaruil5/social_reasoning/tinyzero/fantom_distilled_1.5b/actor/global_step_250
+export DATA_FILE=/home/jiaruil5/social_reasoning_rl/data/fantom/train.parquet
+export ROLLOUT_TP_SIZE=1
 export VLLM_ATTENTION_BACKEND=XFORMERS
-export SAVE_DIR=/compute/babel-2-29/jiaruil5/social_reasoning/tinyzero/fantom_distilled_1.5b
+export DATA_OUTPUT_PATH=outputs_gen/train_gen.parquet
 
 export NCCL_TIMEOUT=1800  # 30 minutes instead of default 10
 export NCCL_ASYNC_ERROR_HANDLING=1
 export NCCL_DEBUG=INFO
 export NCCL_IB_DISABLE=0
-export NCCL_P2P_DISABLE=1
-export HYDRA_FULL_ERROR=1
+# export NCCL_SOCKET_IFNAME=eth0  # Replace with your network interface
 
-bash train_tiny_zero.sh
-
-# rm -rf $(ls | grep -E '^global_step_[6-9][2-9][0]$')
+bash inference_tiny_zero.sh
