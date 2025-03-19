@@ -29,12 +29,14 @@ conda activate tinyzero
 
 export CUDA_VISIBLE_DEVICES=0,1
 export N_GPUS=2
-export BASE_MODEL=/compute/babel-4-33/jiaruil5/.cache/DeepSeek-R1-Distill-Qwen-1.5B
+# export BASE_MODEL=/compute/babel-4-33/jiaruil5/.cache/DeepSeek-R1-Distill-Qwen-1.5B
+export BASE_MODEL=/compute/babel-4-33/jiaruil5/.cache/agentica-org/DeepScaleR-1.5B-Preview
 export DATA_DIR=/home/jiaruil5/social_reasoning_rl/data/tomi
-export EXPERIMENT_NAME=tomi-tinyzero
+export EXPERIMENT_NAME=tomi-tinyzero-another-1.5b
 export ROLLOUT_TP_SIZE=2
 export VLLM_ATTENTION_BACKEND=XFORMERS
-export SAVE_DIR=/compute/babel-2-29/jiaruil5/social_reasoning/tinyzero/tomi_distilled_1.5b
+# export SAVE_DIR=/compute/babel-2-29/jiaruil5/social_reasoning/tinyzero/tomi_distilled_1.5b
+export SAVE_DIR=/compute/babel-2-29/jiaruil5/social_reasoning/tinyzero/tomi_deepscaler_preview_distilled_1.5b
 
 export NCCL_TIMEOUT=1800  # 30 minutes instead of default 10
 export NCCL_ASYNC_ERROR_HANDLING=1
